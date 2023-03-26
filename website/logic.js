@@ -32,7 +32,7 @@ function upload() {
 async function send() {
     //change button so user sees that button was clicked
     let button = document.querySelector(".form-button").innerHTML = "sending..."
-    fetch("http://check23.lcarilla.de/memes/meme", {
+    fetch("https://check23.lcarilla.de/memes/meme", {
         method: "POST",
         body: JSON.stringify({ image: sendToServer, title: "bruh" }),
         headers: { "Content-type": "application/json" }
