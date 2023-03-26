@@ -1,0 +1,2 @@
+npm i
+mkdir upload
