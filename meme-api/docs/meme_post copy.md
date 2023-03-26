@@ -1,4 +1,4 @@
-# Publish a meme ~OwO~
+# Publish a meme OwO
 
 **URL** : `/memes/meme`
 
