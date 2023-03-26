@@ -1,4 +1,4 @@
-# Get a random a meme ~UwU~
+# Get a random a meme UwU
 
 **URL** : `/memes/meme`
 

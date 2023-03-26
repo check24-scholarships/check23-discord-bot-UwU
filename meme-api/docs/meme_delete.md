@@ -1,4 +1,4 @@
-# Delete a meme ~OwO~
+# Delete a meme OwO
 
 **URL** : `/memes/meme/:id`
 
