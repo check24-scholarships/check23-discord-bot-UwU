@@ -1,0 +1,16 @@
+{
+  "name": "check23-meme-api",
+  "version": "versioning is bloated",
+  "description": "bloat",
+  "main": "app.js",
+  "keywords": ["keywords", "are", "bloated"],
+  "license": "licenses are bloated",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "sharp": "^0.32.0",
+    "uuid": "^9.0.0"
+  }
+}
