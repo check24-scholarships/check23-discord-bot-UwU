@@ -1,0 +1,51 @@
+:root{
+    --bgcol: rgb(32, 35, 43);
+    --maincol: 0, 140, 255;
+}
+body{
+    background-color: var(--bgcol);
+}
+.nav{
+    top:15px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    color: rgb(var(--maincol));
+    font-family: monospace;
+}
+.nav-elem{
+    margin-inline: 10px;
+    border: solid 3px rgb(var(--maincol));
+    padding: 3px 10px 3px 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.nav-elem:hover{
+    background-color:rgba(var(--maincol),0.1) ;
+}
+.nav-title{
+    font-size: 30px;
+    margin-right: auto;
+}
+.upload{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.form-button{
+    font-family: monospace;
+    border: solid 3px rgb(var(--maincol));
+    border-radius: 20px;
+    color: rgb(var(--maincol));
+    padding:0px 40px 7px 40px;
+    font-size: 100px;
+    background-color: transparent;
+    margin: 30PX;
+}
+
+.uploaded-img{
+    max-width: 90%;
+}
