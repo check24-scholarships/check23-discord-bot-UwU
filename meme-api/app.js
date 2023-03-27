@@ -17,7 +17,7 @@ app.use(PREFIX + "/meme", express.static("./upload"))
 const saveImage = (toSave, data) => {
     const buffer = Buffer.from(toSave, "base64");
     sharp(buffer).resize(data.wres, data.hres, {
-        withoutEnlargement: true,
+        withoutEnlargement: true, fit: "inside"
     }).jpeg({ quality: data.quality }).toFile(data.path);
 }
 app.get(PREFIX + "/coffee", (req, res) => { res.status(418).send() })
