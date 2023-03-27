@@ -40,9 +40,7 @@ app.post(PREFIX + '/meme', async (req, res) => {
 });
 app.get(PREFIX + "/meme", async (req, res) => {
     try {
-        const maxid = (await query(`SELECT MAX(id) AS max FROM memes`)).rows[0].max
-        const meme = (await query(`SELECT * FROM memes WHERE id > ?`,
-            [Math.floor(Math.random() * (maxid))])).rows[0]
+        const meme = (await query(`SELECT * FROM memes order by rand() limit 1`)).rows
         res.status(200).send(meme)
     } catch (e) {
         res.status(500).send()
