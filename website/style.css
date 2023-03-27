@@ -4,6 +4,7 @@
 }
 body{
     background-color: var(--bgcol);
+    margin: 0;
 }
 .nav{
     top:15px;
@@ -17,9 +18,9 @@ body{
 .nav-elem{
     margin-inline: 10px;
     border: solid 3px rgb(var(--maincol));
-    padding: 3px 10px 3px 10px;
+    padding: 3px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: calc(1vw + 13px);
 }
 .nav-elem:hover{
     background-color:rgba(var(--maincol),0.1) ;
@@ -40,12 +41,13 @@ body{
     border: solid 3px rgb(var(--maincol));
     border-radius: 20px;
     color: rgb(var(--maincol));
-    padding:0px 40px 7px 40px;
-    font-size: 100px;
+    padding: 5px;
+    font-size: calc(2vw + 60px);
     background-color: transparent;
     margin: 30PX;
 }
 
 .uploaded-img{
-    max-width: 90%;
+    max-width: 70vw;
+    max-height: 70vh;
 }
