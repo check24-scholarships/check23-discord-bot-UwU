@@ -15,7 +15,7 @@ public class DiscordBotApplication {
     private static DiscordBotApplication instance;
 
     private final JDA jda;
-    private final ConfigService configService = new CommonConfigService();
+    private final ConfigService configService = new CommonConfigService("./configs/");
 
     public static void main(String[] args) {
         new DiscordBotApplication();
