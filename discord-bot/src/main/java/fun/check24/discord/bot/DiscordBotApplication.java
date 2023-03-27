@@ -29,6 +29,7 @@ public class DiscordBotApplication {
         instance = this;
 
         BotConfig botConfig = this.configService.registerConfig("bot.json", BotConfig.class);
+        System.out.println(botConfig.getIntents());
         JDABuilder jdaBuilder = JDABuilder.create(botConfig.getToken(), botConfig.getIntents());
 
         jdaBuilder.setStatus(botConfig.getStatus());
