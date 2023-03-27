@@ -1,13 +1,15 @@
-:root{
+:root {
     --bgcol: rgb(32, 35, 43);
     --maincol: 0, 140, 255;
 }
-body{
+
+body {
     background-color: var(--bgcol);
     margin: 0;
 }
-.nav{
-    top:15px;
+
+.nav {
+    top: 15px;
     position: fixed;
     width: 100%;
     display: flex;
@@ -15,28 +17,33 @@ body{
     color: rgb(var(--maincol));
     font-family: monospace;
 }
-.nav-elem{
+
+.nav-elem {
     margin-inline: 10px;
     border: solid 3px rgb(var(--maincol));
     padding: 3px;
     border-radius: 10px;
     font-size: calc(1vw + 13px);
 }
-.nav-elem:hover{
-    background-color:rgba(var(--maincol),0.1) ;
+
+.nav-elem:hover {
+    background-color: rgba(var(--maincol), 0.1);
 }
-.nav-title{
+
+.nav-title {
     font-size: 30px;
     margin-right: auto;
 }
-.upload{
+
+.upload {
     margin-top: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.form-button{
+
+.form-button {
     font-family: monospace;
     border: solid 3px rgb(var(--maincol));
     border-radius: 20px;
@@ -47,7 +54,7 @@ body{
     margin: 30PX;
 }
 
-.uploaded-img{
+.uploaded-img {
     max-width: 70vw;
     max-height: 70vh;
 }
