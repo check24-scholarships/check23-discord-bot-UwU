@@ -1,51 +1,56 @@
-:root{
+:root {
     --bgcol: rgb(32, 35, 43);
     --maincol: 0, 140, 255;
 }
-body{
+
+body {
     background-color: var(--bgcol);
+    margin: 0;
 }
-.nav{
-    top:15px;
+.nav {
+    top: 15px;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: right;
     color: rgb(var(--maincol));
     font-family: monospace;
 }
-.nav-elem{
+
+.nav-elem {
     margin-inline: 10px;
     border: solid 3px rgb(var(--maincol));
-    padding: 3px 10px 3px 10px;
+    padding: 3px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: calc(1vw + 13px);
     text-decoration: none;
     color: inherit;
 }
-.nav-elem:hover{
+.nav-elem:hover {
+    background-color: rgba(var(--maincol), 0.1);
     cursor: pointer;
 }
-.nav-elem:hover{
-    background-color:rgba(var(--maincol),0.1) ;
-}
-.nav-title{
-    font-size: 30px;
+
+.nav-title {
+    font-size: calc(1vw + 13px);
     margin-right: auto;
 }
-.upload{
+
+.upload {
     margin-top: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.form-button{
+
+.form-button {
     font-family: monospace;
     border: solid 3px rgb(var(--maincol));
     border-radius: 20px;
     color: rgb(var(--maincol));
-    padding:0px 40px 7px 40px;
-    font-size: 100px;
+    padding: 5px;
+    font-size: calc(2vw + 60px);
     background-color: transparent;
     margin: 30PX;
 }
@@ -79,4 +84,8 @@ body{
     color: white;
     outline: none;
     border: none;
+}
+.uploaded-img {
+    max-width: 70vw;
+    max-height: 70vh;
 }

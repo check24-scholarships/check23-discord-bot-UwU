@@ -3,7 +3,11 @@
   "version": "versioning is bloated",
   "description": "bloat",
   "main": "app.js",
-  "keywords": ["keywords", "are", "bloated"],
+  "keywords": [
+    "keywords",
+    "are",
+    "bloated"
+  ],
   "license": "licenses are bloated",
   "dependencies": {
     "cors": "^2.8.5",
