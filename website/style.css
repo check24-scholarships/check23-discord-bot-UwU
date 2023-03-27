@@ -8,8 +8,7 @@ body {
     margin: 0;
 }
 .nav {
-    top: 15px;
-    position: fixed;
+    margin: 10px;
     width: 100%;
     display: flex;
     justify-content: right;
@@ -78,12 +77,15 @@ body {
 }
 .titleinput{
     width: 500px;
-    height: 100px;
+    height: 80px;
     font-size: 30px;
     background-color: black;
     color: white;
     outline: none;
     border: none;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
 }
 .uploaded-img {
     max-width: 70vw;

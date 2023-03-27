@@ -38,9 +38,6 @@ async function send(memetitle) {
         headers: { "Content-type": "application/json" }
     }).then(e => {
         //reset
-        document.querySelector(".upload").innerHTML = `
-                <a class = "form-button">UPLOAD</a>
-                <input type="file" style="display:none" oninput="upload()" id="PFPInput">
-                `;
+        location.reload()
     })
 }
