@@ -1,7 +1,7 @@
 {
-  "token": "MTA4OTgzNzM2NjM3NTYyODkyMQ.GxUtpG.pfvo7MA92Bjenf7G2gXqC4EW6bdj7kXIt03028",
+  "token": "YOUR_TOKEN",
   "status": "ONLINE",
-  "activity": "Spielt mit deiner Mum",
+  "activity": "YOUR_ACTIVITY",
   "intents": [
     "GUILD_MEMBERS",
     "GUILD_MESSAGES",
