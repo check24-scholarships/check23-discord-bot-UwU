@@ -15,7 +15,7 @@ public class DiscordBotApplication {
     private static DiscordBotApplication instance;
 
     private final JDA jda;
-    private final ConfigService configService = new CommonConfigService("./configs/");
+    private final ConfigService configService = new CommonConfigService();
 
     public static void main(String[] args) {
         new DiscordBotApplication();
@@ -23,6 +23,7 @@ public class DiscordBotApplication {
 
     public DiscordBotApplication() {
         BotConfig botConfig = this.configService.registerConfig("bot.json", BotConfig.class);
+        System.out.println(botConfig.getIntents());
         JDABuilder jdaBuilder = JDABuilder.create(botConfig.getToken(), botConfig.getIntents());
 
         jdaBuilder.setStatus(botConfig.getStatus());
