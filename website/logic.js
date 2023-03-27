@@ -1,4 +1,4 @@
-let sendToServer;
+let sendToServer; //yay gobal variables are great
 function upload() {
     const file = document.querySelector("#PFPInput").files[0];
     const reader = new FileReader();
@@ -29,12 +29,12 @@ function upload() {
         form.append(sendButton);
     }
 }
-async function send() {
+async function send(memetitle) {
     //change button so user sees that button was clicked
-    let button = document.querySelector(".form-button").innerHTML = "sending..."
+   document.querySelector(".form-button").innerHTML = "sending..."
     fetch("https://check23.lcarilla.de/memes/meme", {
         method: "POST",
-        body: JSON.stringify({ image: sendToServer, title: "bruh" }),
+        body: JSON.stringify({ image: sendToServer, title: document.querySelector(".titleinput").value }),
         headers: { "Content-type": "application/json" }
     }).then(e => {
         //reset

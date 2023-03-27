@@ -7,7 +7,6 @@ body {
     background-color: var(--bgcol);
     margin: 0;
 }
-
 .nav {
     top: 15px;
     position: fixed;
@@ -24,14 +23,16 @@ body {
     padding: 3px;
     border-radius: 10px;
     font-size: calc(1vw + 13px);
+    text-decoration: none;
+    color: inherit;
 }
-
 .nav-elem:hover {
     background-color: rgba(var(--maincol), 0.1);
+    cursor: pointer;
 }
 
 .nav-title {
-    font-size: 30px;
+    font-size: calc(1vw + 13px);
     margin-right: auto;
 }
 
@@ -53,7 +54,37 @@ body {
     background-color: transparent;
     margin: 30PX;
 }
-
+.uploaded-img{
+    max-width: 90%;
+}
+.memearea{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.meme{
+    max-width: 500px;
+    max-height: 500px;
+    max-width: 80vw;
+    border: solid 3px rgb(var(--maincol));
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meme img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.titleinput{
+    width: 500px;
+    height: 100px;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+}
 .uploaded-img {
     max-width: 70vw;
     max-height: 70vh;

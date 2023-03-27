@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon/apple-touch-icon.png"/>
-    <script src="logic.js"></script>
+    <script src="logic.js" defer></script>
     <title>Upload Memes for bot!</title>
+    <script src="memes.js" defer></script>
 </head>
 <body>
    <div class="nav">
         <a class = "nav-title">CHECK23 BOT</a>
-        <a class = "nav-elem">UPLOAD</a>
-        <a class = "nav-elem">MEMES</a>
+        <a class = "nav-elem" href="/">UPLOAD</a>
+        <a class = "nav-elem" href="meme.html">MEMES</a>
    </div>
-    <label class="upload">
-        <a class = "form-button">UPLOAD</a>
-        <input type="file" style="display:none" oninput="upload()" id="PFPInput">
-        <input class="titleinput" type="text" placeholder="meme title goes here">
-    </label>
+    <div class="memearea">
+    </div>
 </body>
 </html>
