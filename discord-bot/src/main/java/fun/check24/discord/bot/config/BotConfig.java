@@ -16,7 +16,7 @@ public final class BotConfig implements ConfigAdapter<BotConfig> {
     private String token;
     private OnlineStatus status;
     private String activity;
-
+    private long guildId;
     private Collection<GatewayIntent> intents;
 
     @Override
@@ -25,5 +25,6 @@ public final class BotConfig implements ConfigAdapter<BotConfig> {
         this.status = botConfig.getStatus();
         this.activity = botConfig.getActivity();
         this.intents = botConfig.getIntents();
+        this.guildId = botConfig.getGuildId();
     }
 }
