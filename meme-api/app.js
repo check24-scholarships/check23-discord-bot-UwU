@@ -40,7 +40,7 @@ app.post(PREFIX + '/meme', async (req, res) => {
 });
 app.get(PREFIX + "/meme", async (req, res) => {
     try {
-        const meme = (await query(`SELECT * FROM memes order by rand() limit 1`)).rows
+        const meme = (await query(`SELECT * FROM memes order by rand() limit 1`)).rows[0]
         res.status(200).send(meme)
     } catch (e) {
         res.status(500).send()
