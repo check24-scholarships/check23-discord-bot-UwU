@@ -51,7 +51,7 @@ app.delete(PREFIX + "/meme/:id", async (req, res) => {
     try {
         const id = req.params.id
         const uuid = (await query(`SELECT uuid FROM memes WHERE id = ?`, [id])).rows[0]?.uuid
-        if (uuid === undefined || fs.existsSync(`./upload/${uuid}.jpg`)) res.status(404).send()
+        if (uuid === undefined || !fs.existsSync(`./upload/${uuid}.jpg`)) res.status(404).send()
         fs.unlinkSync(`./upload/${uuid}.jpg`)
         await query(`DELETE FROM memes WHERE id = ?`, [id])
         res.status(204).send()
