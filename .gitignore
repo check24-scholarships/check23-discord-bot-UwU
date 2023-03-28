@@ -190,4 +190,4 @@ UtilCommand.java
 upload.bat
 
 *.iml
-/configs/
+/discord-bot/configs/
