@@ -1,6 +1,7 @@
 :root {
     --bgcol: rgb(32, 35, 43);
     --maincol: 0, 140, 255;
+    --mobile-size: 800px
 }
 
 body {
@@ -35,12 +36,14 @@ body {
     margin-right: auto;
 }
 .title{
-    text-align: center;
     font-size: 70px;
     margin-right: auto;
     margin-left: auto;
     font-family: "Outfit";
     color: rgb(var(--maincol));
+    display: block;
+    width: 100vw;
+    text-align: center;
 }
 .upload {
     margin:20px 10px 0px 10px;
@@ -53,21 +56,61 @@ body {
 }
 
 .form-button {
+    height: 100px;
     font-family: monospace;
     background-color: rgb(var(--maincol));
     color: var(--bgcol);
     border-radius: 20px;
     padding: 5px;
     font-size: calc(2vw + 60px);
-    margin: 30PX;
     border: none;
+    border: solid 3px rgb(var(--maincol));
 }
 .form-button:hover{
     background-color: rgba(var(--maincol),0.8);
 }
-.uploaded-img{
-    max-width: 90%;
+.send-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
 }
+.send-container > input{
+    width: calc(100% - 20px);
+    height: 90px;
+    font-size: 30px;
+    border: solid 3px rgb(var(--maincol));
+    background-color: transparent;
+    color:rgb(var(--maincol));
+    outline: none;
+    border-radius: 10px;
+    padding: 10px 5px 10px 5px;
+    margin: 10px 10px 10px 10px;
+}
+@media  (max-width: 800px){
+    .send-container{
+        flex-direction: column;
+    }
+    .send-container > input{
+        font-size: 30px;
+        height: 60px;
+    }
+    .send-container > button{
+        height: 60px;
+        font-size: 40px;
+        width: 100%;
+        padding-inline: 5px;
+    }
+    .title{
+        font-size:40px;
+    }
+}
+.uploaded-img {
+    max-width: 90vw;
+    max-width: 90vw;
+
+}
+
 .memearea{
     display: flex;
     justify-content: center;
@@ -88,21 +131,4 @@ body {
 .meme img{
     max-width: 100%;
     max-height: 100%;
-}
-.titleinput{
-    width: 500px;
-    max-width: 75vw;
-    height: 80px;
-    font-size: 30px;
-    border: solid 3px rgb(var(--maincol));
-    background-color: transparent;
-    color:rgb(var(--maincol));
-    outline: none;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 20px;
-}
-.uploaded-img {
-    max-width: 70vw;
-    max-height: 70vh;
 }

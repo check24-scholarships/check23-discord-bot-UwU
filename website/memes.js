@@ -6,17 +6,10 @@ const getMeme = async () =>{
     </div>
     `
 }
-// load 10 memes, so no infinite, because images havent loaded in
-for (let i = 0; i < 10; i++) {
-  getMeme();
-}
-setTimeout(() =>{
-  window.addEventListener("scroll", handleInfiniteScroll);
-},3000)
 const handleInfiniteScroll = () => {
     window.removeEventListener("scroll", handleInfiniteScroll);
-    setTimeout(() => {
-      if ((window.innerHeight + window.pageYOffset + 100) >= document.body.offsetHeight) for (let i = 0; i < 5; i++) getMeme()
+    setTimeout(async () => {
+      if ((window.innerHeight + window.pageYOffset + 100) >= document.body.offsetHeight) for (let i = 0; i < 5; i++) await getMeme()
       window.addEventListener("scroll", handleInfiniteScroll)
     }, 500);
   };
