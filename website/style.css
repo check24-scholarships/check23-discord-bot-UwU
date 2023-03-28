@@ -18,15 +18,15 @@ body {
 
 .nav-elem {
     margin-inline: 10px;
-    border: solid 3px rgb(var(--maincol));
-    padding: 3px;
+    background-color: rgb(var(--maincol));
+    padding: 3px 7px 3px 7px;
     border-radius: 10px;
     font-size: calc(1vw + 13px);
     text-decoration: none;
-    color: inherit;
+    color: var(--bgcol);
 }
 .nav-elem:hover {
-    background-color: rgba(var(--maincol), 0.1);
+    background-color: rgba(var(--maincol), 0.8);
     cursor: pointer;
 }
 
@@ -37,8 +37,8 @@ body {
 .title{
     text-align: center;
     font-size: 70px;
-    width: 100%;
-    display: flex;
+    margin-right: auto;
+    margin-left: auto;
     font-family: "Outfit";
     color: rgb(var(--maincol));
 }
@@ -47,23 +47,23 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: solid 3px rgb(var(--maincol));
     padding: 20px;
     border-radius: 10px;
+    margin-inline:20% ;
 }
 
 .form-button {
     font-family: monospace;
-    border: solid 3px rgb(var(--maincol));
+    background-color: rgb(var(--maincol));
+    color: var(--bgcol);
     border-radius: 20px;
-    color: rgb(var(--maincol));
     padding: 5px;
     font-size: calc(2vw + 60px);
-    background-color: transparent;
     margin: 30PX;
+    border: none;
 }
 .form-button:hover{
-    background-color: rgba(var(--maincol),0.1);
+    background-color: rgba(var(--maincol),0.8);
 }
 .uploaded-img{
     max-width: 90%;
