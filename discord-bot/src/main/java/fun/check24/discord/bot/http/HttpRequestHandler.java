@@ -25,7 +25,7 @@ public final class HttpRequestHandler {
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final HttpConfig httpConfig;
 
-    private CompletableFuture<MemeData> fetchRandomMeme() throws URISyntaxException {
+    public CompletableFuture<MemeData> fetchRandomMeme() throws URISyntaxException {
         HttpRequest httpRequest = HttpRequest.newBuilder(new URI(this.httpConfig.getBaseUri() + "/meme/"))
                 .GET()
                 .build();
@@ -34,12 +34,8 @@ public final class HttpRequestHandler {
                 .thenApplyAsync(stringHttpResponse -> GSON.fromJson(stringHttpResponse.body(), MemeData.class));
     }
 
-    private String getUrlFromMeme(@NotNull MemeData memeData) {
+    public String getUrlFromMeme(@NotNull MemeData memeData) {
         return this.httpConfig.getBaseUri() + "/meme/" + memeData.uuid() + ".jpg";
-    }
-
-    public CompletableFuture<String> fetchRandomMemeUrl() throws URISyntaxException {
-        return this.fetchRandomMeme().thenApplyAsync(this::getUrlFromMeme);
     }
 
 }
