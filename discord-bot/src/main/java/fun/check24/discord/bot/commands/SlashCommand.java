@@ -2,6 +2,7 @@ package fun.check24.discord.bot.commands;
 
 import fun.check24.discord.bot.DiscordBotApplication;
 import fun.check24.discord.bot.config.BotConfig;
+import fun.check24.discord.bot.logger.BotLogger;
 import lombok.Getter;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -24,7 +25,7 @@ public abstract class SlashCommand {
                 .getGuildById(DiscordBotApplication.getInstance().getBotConfig().getGuildId());
         Objects.requireNonNull(guild, "Configured guild cannot be null!")
                 .upsertCommand(commandData).complete();
-        System.out.println("command registered: " + commandData.getName());
+        BotLogger.getInstance().info("Registered slash command with name " + commandData.getName());
     }
 
     public abstract void handle(SlashCommandInteractionEvent event);

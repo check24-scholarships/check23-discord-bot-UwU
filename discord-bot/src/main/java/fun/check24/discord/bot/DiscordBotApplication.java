@@ -7,6 +7,7 @@ import fun.check24.discord.bot.commands.SlashCommandListener;
 import fun.check24.discord.bot.config.BotConfig;
 import fun.check24.discord.bot.config.HttpConfig;
 import fun.check24.discord.bot.http.HttpRequestHandler;
+import fun.check24.discord.bot.logger.BotLogger;
 import lombok.Getter;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -33,7 +34,7 @@ public class DiscordBotApplication {
         instance = this;
 
         this.botConfig = this.configService.registerConfig("bot.json", BotConfig.class);
-        System.out.println(this.botConfig.getIntents());
+        BotLogger.getInstance().info(this.botConfig.getIntents().toString());
         JDABuilder jdaBuilder = JDABuilder.create(this.botConfig.getToken(), this.botConfig.getIntents());
 
         jdaBuilder.setStatus(this.botConfig.getStatus());

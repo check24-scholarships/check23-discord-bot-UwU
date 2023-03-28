@@ -3,6 +3,7 @@ package fun.check24.discord.bot.commands.commands;
 import fun.check24.discord.bot.DiscordBotApplication;
 import fun.check24.discord.bot.commands.CommandHandler;
 import fun.check24.discord.bot.commands.SlashCommand;
+import fun.check24.discord.bot.logger.BotLogger;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -49,7 +50,7 @@ public final class UpdateCommandsSlashCommand extends SlashCommand {
 
         for (SlashCommand cmd : DiscordBotApplication.getInstance().getCommandHandler().getCommands()) {
             commandDataList.add(cmd.getCommandData());
-            System.out.println(cmd.getName());
+            BotLogger.getInstance().debug(cmd.getName());
         }
         guild.updateCommands().addCommands(commandDataList).submit();
     }
