@@ -38,4 +38,8 @@ public final class HttpRequestHandler {
         return this.httpConfig.getBaseUri() + "/meme/" + memeData.uuid() + ".jpg";
     }
 
+    public CompletableFuture<String> fetchRandomMemeUrl() throws URISyntaxException {
+        return this.fetchRandomMeme().thenApplyAsync(this::getUrlFromMeme);
+    }
+
 }

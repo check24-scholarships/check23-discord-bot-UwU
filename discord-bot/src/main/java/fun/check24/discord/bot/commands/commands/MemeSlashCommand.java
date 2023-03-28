@@ -2,7 +2,6 @@ package fun.check24.discord.bot.commands.commands;
 
 import fun.check24.discord.bot.commands.SlashCommand;
 import fun.check24.discord.bot.http.HttpRequestHandler;
-import fun.check24.discord.bot.meme.MemeData;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -11,8 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.net.URISyntaxException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 public final class MemeSlashCommand extends SlashCommand {
 
@@ -34,28 +31,21 @@ public final class MemeSlashCommand extends SlashCommand {
     }
 
     @Override
-    public void handle(SlashCommandInteractionEvent event){
+    public void handle(SlashCommandInteractionEvent event) {
         event.deferReply().queue();
 
-
-
         try {
-            MemeData meme = this.requestHandler.fetchRandomMeme().get();
-            String url = this.requestHandler.getUrlFromMeme(meme);
-            EmbedBuilder embed = new EmbedBuilder();
-            if (meme.title().isBlank()) {
-                embed.setTitle("No title found.");
-            }
-            else {
-                embed.setTitle(meme.title());
-            }
-            embed.setImage(url);
-            embed.setColor(Color.BLUE);
-            embed.setFooter(event.getUser().getName() + " | " + event.getTimeCreated().toLocalTime());
-            event.getHook().sendMessageEmbeds(embed.build()).queue();
-        } catch (URISyntaxException | InterruptedException | ExecutionException e) {
+            this.requestHandler.fetchRandomMeme().thenAcceptAsync(memeData -> {
+                String url = this.requestHandler.getUrlFromMeme(memeData);
+                EmbedBuilder embed = new EmbedBuilder();
+                embed.setTitle(memeData.title().isBlank() ? "N.A." : memeData.title());
+                embed.setImage(url);
+                embed.setColor(Color.BLUE);
+                embed.setFooter(event.getUser().getName() + " | " + event.getTimeCreated().toLocalTime());
+                event.getHook().sendMessageEmbeds(embed.build()).queue();
+            });
+        } catch (URISyntaxException e) {
             event.reply("Something went wrong").setEphemeral(true).queue();
         }
-
     }
 }
