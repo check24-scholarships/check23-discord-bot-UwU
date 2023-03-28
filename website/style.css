@@ -77,11 +77,13 @@ body {
     max-width: 500px;
     max-height: 500px;
     max-width: 80vw;
-    border: solid 3px rgb(var(--maincol));
+    border: solid 5px rgb(var(--maincol));
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
 }
 .meme img{
     max-width: 100%;
