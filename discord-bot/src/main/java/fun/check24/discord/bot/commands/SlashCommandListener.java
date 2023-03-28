@@ -4,8 +4,6 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-
 public final class SlashCommandListener extends ListenerAdapter {
 
     private final CommandHandler commandHandler;

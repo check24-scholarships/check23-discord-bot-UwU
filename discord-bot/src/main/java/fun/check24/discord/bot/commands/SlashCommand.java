@@ -1,7 +1,6 @@
 package fun.check24.discord.bot.commands;
 
 import fun.check24.discord.bot.DiscordBotApplication;
-import fun.check24.discord.bot.config.BotConfig;
 import fun.check24.discord.bot.logger.BotLogger;
 import lombok.Getter;
 import net.dv8tion.jda.api.entities.Guild;

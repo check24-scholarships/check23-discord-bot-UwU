@@ -1,7 +1,6 @@
 package fun.check24.discord.bot.commands.commands;
 
 import fun.check24.discord.bot.DiscordBotApplication;
-import fun.check24.discord.bot.commands.CommandHandler;
 import fun.check24.discord.bot.commands.SlashCommand;
 import fun.check24.discord.bot.logger.BotLogger;
 import net.dv8tion.jda.api.Permission;
