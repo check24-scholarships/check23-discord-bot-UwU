@@ -24,7 +24,6 @@ public class UpdateCommandsSlashCommand extends SlashCommand {
     @Override
     public void handle(SlashCommandInteractionEvent event) {
         deleteCommands(event.getGuild(), true);
-
     }
 
     @Override

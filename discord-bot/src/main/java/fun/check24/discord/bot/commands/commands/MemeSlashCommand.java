@@ -13,9 +13,9 @@ public class MemeSlashCommand extends SlashCommand {
     public MemeSlashCommand() {
         super("meme",
                 Commands.slash("meme", "Send a random meme")
-                        .setNSFW(true) // --uwu-- Daddy (ich wurde nicht gezwungen das zu schreiben)
                         .addSubcommands(
-                                new SubcommandData("delete", "Delete a meme"))
+                                new SubcommandData("delete", "Delete a meme"),
+                                new SubcommandData("get", "Get a meme"))
         );
     }
 
@@ -27,9 +27,10 @@ public class MemeSlashCommand extends SlashCommand {
     @Override
     public void handle(SlashCommandInteractionEvent event) {
 
+        event.deferReply().queue();
         try {
             DiscordBotApplication.getInstance().getRequestHandler().fetchRandomMemeUrl().thenAccept(url -> {
-                event.reply(url).setEphemeral(true).queue();
+                event.getHook().sendMessage(url).queue();
             });
         } catch (URISyntaxException e) {
             event.reply("Something went wrong").setEphemeral(true).queue();

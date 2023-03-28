@@ -25,11 +25,11 @@ public class DiscordBotApplication {
     private final HttpRequestHandler requestHandler;
     private final CommandHandler commandHandler;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new DiscordBotApplication();
     }
 
-    public DiscordBotApplication() {
+    public DiscordBotApplication() throws InterruptedException {
         instance = this;
 
         HttpConfig httpConfig = this.configService.registerConfig("http.json", HttpConfig.class);
@@ -42,7 +42,7 @@ public class DiscordBotApplication {
         jdaBuilder.setStatus(botConfig.getStatus());
         jdaBuilder.setActivity(Activity.playing(botConfig.getActivity()));
 
-        this.jda = jdaBuilder.build();
+        this.jda = jdaBuilder.build().awaitReady();
 
         this.requestHandler = new HttpRequestHandler(httpConfig);
         this.commandHandler = new CommandHandler();

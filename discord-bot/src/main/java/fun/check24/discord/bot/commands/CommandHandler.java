@@ -13,7 +13,7 @@ public class CommandHandler {
 
     public CommandHandler() {
         this.commands.add(new MemeSlashCommand());
-        this.commands.add(new UpdateCommandsSlashCommand());
+        //this.commands.add(new UpdateCommandsSlashCommand());
     }
 
     public void handleSlashCommand(SlashCommandInteractionEvent event) {
