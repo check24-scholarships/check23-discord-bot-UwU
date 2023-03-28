@@ -21,12 +21,18 @@ function upload() {
         //delete input and button
         document.querySelector(".form-button").remove();
         document.querySelector("#PFPInput").remove();
-        //append send button
+        //append send button and message container
+        const titleAndSendContainer = document.createElement("div");
+        titleAndSendContainer.className = "send-container"
+        form.append(titleAndSendContainer)
         const sendButton = document.createElement("button");
         sendButton.className = "form-button";
         sendButton.setAttribute("onclick", "send()");
         sendButton.innerHTML = "SEND"
-        form.append(sendButton);
+        titleAndSendContainer.append(sendButton);
+        const titleInputField = document.createElement("input");
+        titleInputField.id = "titleInput";
+        titleAndSendContainer.prepend(titleInputField)
     }
 }
 async function send(memetitle) {
@@ -34,7 +40,7 @@ async function send(memetitle) {
    document.querySelector(".form-button").innerHTML = "sending..."
     fetch("https://check23.lcarilla.de/memes/meme", {
         method: "POST",
-        body: JSON.stringify({ image: sendToServer, title: document.querySelector(".titleinput").value }),
+        body: JSON.stringify({ image: sendToServer, title: document.querySelector("#titleInput").value }),
         headers: { "Content-type": "application/json" }
     }).then(e => {
         //reset
