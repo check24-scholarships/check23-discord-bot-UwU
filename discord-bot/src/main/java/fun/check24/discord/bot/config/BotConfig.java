@@ -27,4 +27,5 @@ public final class BotConfig implements ConfigAdapter<BotConfig> {
         this.intents = botConfig.getIntents();
         this.guildId = botConfig.getGuildId();
     }
+
 }

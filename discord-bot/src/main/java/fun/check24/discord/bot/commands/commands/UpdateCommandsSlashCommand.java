@@ -14,7 +14,7 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdateCommandsSlashCommand extends SlashCommand {
+public final class UpdateCommandsSlashCommand extends SlashCommand {
 
     public UpdateCommandsSlashCommand() {
         super("updateslashcommands", Commands.slash("updateslashcommands", "Update slash commands")
@@ -48,8 +48,8 @@ public class UpdateCommandsSlashCommand extends SlashCommand {
         List<CommandData> commandDataList = new ArrayList<>();
 
         for (SlashCommand cmd : DiscordBotApplication.getInstance().getCommandHandler().getCommands()) {
-            commandDataList.add(cmd.commandData);
-            System.out.println(cmd.name);
+            commandDataList.add(cmd.getCommandData());
+            System.out.println(cmd.getName());
         }
         guild.updateCommands().addCommands(commandDataList).submit();
     }

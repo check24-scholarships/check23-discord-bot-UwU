@@ -26,7 +26,6 @@ public final class HttpRequestHandler {
     private final HttpConfig httpConfig;
 
     private CompletableFuture<MemeData> fetchRandomMeme() throws URISyntaxException {
-
         HttpRequest httpRequest = HttpRequest.newBuilder(new URI(this.httpConfig.getBaseUri() + "/meme/"))
                 .GET()
                 .build();

@@ -1,22 +1,26 @@
 package fun.check24.discord.bot.commands.commands;
 
-import fun.check24.discord.bot.DiscordBotApplication;
 import fun.check24.discord.bot.commands.SlashCommand;
+import fun.check24.discord.bot.http.HttpRequestHandler;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URISyntaxException;
 
-public class MemeSlashCommand extends SlashCommand {
+public final class MemeSlashCommand extends SlashCommand {
 
-    public MemeSlashCommand() {
+    private final HttpRequestHandler requestHandler;
+
+    public MemeSlashCommand(@NotNull HttpRequestHandler requestHandler) {
         super("meme",
                 Commands.slash("meme", "Send a random meme")
                         .addSubcommands(
                                 new SubcommandData("delete", "Delete a meme"),
                                 new SubcommandData("get", "Get a meme"))
         );
+        this.requestHandler = requestHandler;
     }
 
     @Override
@@ -26,10 +30,9 @@ public class MemeSlashCommand extends SlashCommand {
 
     @Override
     public void handle(SlashCommandInteractionEvent event) {
-
         event.deferReply().queue();
         try {
-            DiscordBotApplication.getInstance().getRequestHandler().fetchRandomMemeUrl().thenAccept(url -> {
+            this.requestHandler.fetchRandomMemeUrl().thenAccept(url -> {
                 event.getHook().sendMessage(url).queue();
             });
         } catch (URISyntaxException e) {
