@@ -132,3 +132,36 @@ body {
     max-width: 100%;
     max-height: 100%;
 }
+
+
+/*foooter*/
+main{
+    min-height: calc(100vh - 250px);
+}
+footer{
+    width: 100%;
+    min-height: 150px;
+    background-color: rgb(var(--maincol),0.5);
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+footer > div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+footer > div > h1{
+    font-family: "Outfit";
+    color: black;
+    font-size: 40px;
+    font-weight: 500;
+}
+footer > div  > p{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Outift";
+}
+/**{
+    outline: solid green 1px
+}*/
