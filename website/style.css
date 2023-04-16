@@ -3,10 +3,10 @@
     --maincol: 0, 140, 255;
     --mobile-size: 800px
 }
-
 body {
     background-color: var(--bgcol);
     margin: 0;
+    overflow-x: hidden;
 }
 .nav {
     margin: 10px 0;
@@ -16,7 +16,6 @@ body {
     color: rgb(var(--maincol));
     font-family: monospace;
 }
-
 .nav-elem {
     margin-inline: 10px;
     background-color: rgb(var(--maincol));
@@ -136,7 +135,7 @@ body {
 
 /*foooter*/
 main{
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 200px);
 }
 footer{
     width: 100%;
@@ -159,8 +158,15 @@ footer > div > h1{
 }
 footer > div  > p{
     text-align: center;
-    font-size: 20px;
-    font-family: "Outift";
+    font-size: 30px;
+    font-family: "Outfit";
+}
+footer > div  > a{
+    font-family: "Outfit";
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    color: black;
 }
 /**{
     outline: solid green 1px
